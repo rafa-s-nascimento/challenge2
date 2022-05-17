@@ -1,0 +1,242 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Shadows Into Light", cursive;
+    letter-spacing: 1.1px;
+}
+body {
+    padding: 1em 2em;
+    min-width: 350px;
+}
+header div {
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+    padding: 0 2em;
+    margin: 0 auto;
+}
+main {
+    margin: 0 auto;
+    height: 86.5vh;
+}
+
+.main-index {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.main-index button {
+    width: 283px;
+    height: 75px;
+    border-radius: 18px;
+    border: none;
+    margin-bottom: 19px;
+    background-color: aliceblue;
+    color: darkblue;
+    border: 1px solid darkblue;
+    font-size: 1.1em;
+    transition: all 100ms;
+}
+.main-index :first-child {
+    background-color: darkblue;
+    color: aliceblue;
+}
+button:hover {
+    box-shadow: 5px 5px 2px rgba(0, 0, 0, 0.2);
+}
+.activeR:active {
+    background-color: red;
+    color: white;
+}
+
+.main-add {
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.nova-palavra {
+    display: block;
+    margin-bottom: 20px;
+    border: none;
+    width: 50%;
+    min-width: 320px;
+    padding-left: 5px;
+    font-size: 1.5em;
+    height: 230px;
+    resize: none;
+    color: darkblue;
+}
+.nova-palavra::placeholder {
+    color: darkblue;
+    font-weight: bold;
+}
+.main-add textarea:focus {
+    outline: none;
+}
+.main-add div:first-child {
+    height: 250px;
+}
+.main-add div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+.main-add button {
+    height: 48px;
+    max-width: 296px;
+    min-width: 155px;
+    width: 30%;
+    border-radius: 18px;
+    background-color: aliceblue;
+    color: darkblue;
+    border: 1px solid darkblue;
+    font-size: 1.1em;
+    transition: all 100ms;
+    margin-bottom: 1em;
+}
+#salvar {
+    background-color: darkblue;
+    color: white;
+}
+#jogar {
+    background-color: black;
+    color: white;
+}
+
+.main-game {
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.main-game button {
+    height: 48px;
+    max-width: 296px;
+    min-width: 155px;
+    width: 30%;
+    border-radius: 18px;
+    background-color: aliceblue;
+    color: darkblue;
+    border: 1px solid darkblue;
+    font-size: 1.1em;
+    transition: all 100ms;
+    margin-bottom: 1em;
+}
+.main-game div:nth-child(4) {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+#novo-jogo {
+    background-color: darkblue;
+    color: aliceblue;
+    margin-right: 19px;
+}
+.letras {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 2px;
+    box-sizing: border-box;
+}
+.letras span {
+    display: inline-block;
+    border-bottom: 3px solid black;
+    width: 30px;
+    margin-right: 9px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: darkblue;
+}
+.nulo {
+    height: 35px;
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+    margin-top: 1px;
+}
+.nulo span {
+    border-bottom: 2px solid white;
+    width: 20px;
+    padding: 0;
+    font-size: 1.2rem;
+    color: red;
+    border: none;
+    align-items: center;
+}
+
+/* .mobile {
+    width: 100%;
+    height: 80%;
+    background-color: black;
+    position: absolute;
+    display: none;
+}
+.mobile textarea {
+    width: 100%;
+    height: 100%;
+} */
+
+@media screen and (max-width: 430px) {
+    body {
+        padding: 1em 0;
+    }
+
+    header,
+    main,
+    section,
+    .letras,
+    .valido {
+        width: 100%;
+        max-width: 350px;
+        min-width: 350px;
+    }
+
+    header {
+        padding: 0 1.5em;
+    }
+    .main-index :last-child {
+        transform: scale(0.9);
+    }
+
+    .mobile {
+        color: transparent;
+        /* display: block;  */
+    }
+    .mobile textarea {
+        color: transparent;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    body,
+    header,
+    main,
+    section,
+    .letras,
+    .valido {
+        width: 100%;
+        max-width: 350px;
+        min-width: 350px;
+    }
+    header {
+        padding: 0 1em;
+    }
+
+    .mobile {
+        color: transparent;
+        /* display: block;  */
+    }
+    .mobile textarea {
+        color: transparent;
+    }
+}

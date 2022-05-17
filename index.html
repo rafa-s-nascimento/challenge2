@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Inicio</title>
+    </head>
+    <body>
+        <header>
+            <a href="index.html">
+                <div><img src="./img/Vector.png" alt="logo" /></div>
+            </a>
+        </header>
+        <main>
+            <section class="main-index">
+                <button class="game alt activeB">Iniciar jogo</button>
+                <button class="add alt activeR">Adicionar nova palavra</button>
+            </section>
+            <section class="main-add">
+                <div>
+                    <textarea
+                        class="nova-palavra"
+                        type="text"
+                        placeholder="Digite uma palavra ou frase"
+                    ></textarea>
+                </div>
+                <div>
+                    <button id="salvar" class="activeB adicionar-palavra">
+                        Salvar
+                    </button>
+                    <button class="index alt activeR">Cancelar</button>
+                </div>
+                <div>
+                    <button id="jogar" class="game alt">Jogar</button>
+                </div>
+            </section>
+            <section class="main-game">
+                <canvas width="350" height="400"></canvas>
+                <div class="letras valido"></div>
+                <div class="letras nulo"></div>
+                <div>
+                    <button id="novo-jogo" class="activeB">Novo jogo</button>
+                    <button class="index alt activeR">Desistir</button>
+                </div>
+                <!-- <div class="mobile">
+                <textarea></textarea>
+            </div> -->
+            </section>
+        </main>
+
+        <script src="canvas.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
