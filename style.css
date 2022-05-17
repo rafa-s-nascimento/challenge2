@@ -174,18 +174,6 @@ button:hover {
     align-items: center;
 }
 
-/* .mobile {
-    width: 100%;
-    height: 80%;
-    background-color: black;
-    position: absolute;
-    display: none;
-}
-.mobile textarea {
-    width: 100%;
-    height: 100%;
-} */
-
 @media screen and (max-width: 430px) {
     body {
         padding: 1em 0;
@@ -207,14 +195,6 @@ button:hover {
     .main-index :last-child {
         transform: scale(0.9);
     }
-
-    .mobile {
-        color: transparent;
-        /* display: block;  */
-    }
-    .mobile textarea {
-        color: transparent;
-    }
 }
 
 @media screen and (max-width: 350px) {
@@ -230,13 +210,5 @@ button:hover {
     }
     header {
         padding: 0 1em;
-    }
-
-    .mobile {
-        color: transparent;
-        /* display: block;  */
-    }
-    .mobile textarea {
-        color: transparent;
     }
 }
