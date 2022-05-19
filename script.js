@@ -3,6 +3,7 @@ const bancoDePalavras = ["casa", "carro", "desafio", "honra", "espelho"];
 const letrasPrecionadas = [];
 let palavraSorteada;
 let tentativa = 0;
+let teclado = 0; //
 
 //nodes
 const alt = document.querySelectorAll(".alt");
@@ -11,8 +12,10 @@ const input = document.querySelector(".nova-palavra");
 const novoJogo = document.querySelector("#novo-jogo");
 const valido = document.querySelector(".valido");
 const nulo = document.querySelector(".nulo");
+const mobile = document.querySelector(".mobile"); //
 
 //events
+mobile.firstElementChild.addEventListener("click", mobileTeclado); //
 window.addEventListener("load", function () {
     alt.forEach((e) => {
         e.addEventListener("click", alternarInterfaces);
@@ -234,5 +237,14 @@ function validar(event) {
         return true;
     } else {
         return false;
+    }
+}
+function mobileTeclado() {
+    if (teclado == 0) {
+        this.focus();
+        teclado = 1;
+    } else {
+        this.blur();
+        teclado = 0;
     }
 }
