@@ -16,6 +16,7 @@ const mobile = document.querySelector(".mobile"); //
 
 //events
 mobile.firstElementChild.addEventListener("click", mobileTeclado); //
+mobile.firstElementChild.addEventListener("keypress", validacaoLetras);
 window.addEventListener("load", function () {
     alt.forEach((e) => {
         e.addEventListener("click", alternarInterfaces);
@@ -243,8 +244,10 @@ function mobileTeclado() {
     if (teclado == 0) {
         this.focus();
         teclado = 1;
+        document.body.main.style.height = "auto";
     } else {
         this.blur();
         teclado = 0;
+        document.body.main.style.height = "86.5vh";
     }
 }
