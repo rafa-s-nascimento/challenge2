@@ -244,10 +244,10 @@ function mobileTeclado() {
     if (teclado == 0) {
         this.focus();
         teclado = 1;
-        document.body.main.style.height = "auto";
+        document.querySelector(main).style.height = "auto";
     } else {
         this.blur();
         teclado = 0;
-        document.body.main.style.height = "86.5vh";
+        document.querySelector(main).style.height = "86.5vh";
     }
 }
