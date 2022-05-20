@@ -207,7 +207,7 @@ button:hover {
         height: 60%;
         display: block;
         position: absolute;
-        opacity: 1;
+        opacity: 0;
     }
     .mobile textarea {
         width: 0;
