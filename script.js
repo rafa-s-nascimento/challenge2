@@ -17,6 +17,7 @@ const mobile = document.querySelector(".mobile"); //
 //events
 window.addEventListener("click", mobileTeclado); //
 mobile.firstElementChild.addEventListener("keypress", teclasMobile);
+
 window.addEventListener("load", function () {
     alt.forEach((e) => {
         e.addEventListener("click", alternarInterfaces);
