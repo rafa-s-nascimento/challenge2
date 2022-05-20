@@ -241,6 +241,7 @@ function validar(event) {
         return false;
     }
 }
+
 function cambiarra(keyCode) {
     console.log(keyCode);
     if (keyCode >= 97 && keyCode <= 122) {
