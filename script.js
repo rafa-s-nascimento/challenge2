@@ -241,19 +241,42 @@ function validar(event) {
         return false;
     }
 }
-function validar2(keyCode) {
+function cambiarra(keyCode) {
     console.log(keyCode);
     if (keyCode >= 97 && keyCode <= 122) {
-        return true;
-    } else {
-        return false;
+        let letra = String.fromCharCode(keyCode);
+        let temNoArray = verificaSeLetraJaFoiPrecionada(
+            letra,
+            letrasPrecionadas
+        );
+
+        if (!temNoArray) {
+            letrasPrecionadas.push(letra);
+
+            if (verificaSeLetraEstaNaPalavra(letra)) {
+                let indexDaLetraNaPalavraSorteada = gerarIndex(letra);
+                exibirLetrasCorretasNaTela(
+                    letra,
+                    indexDaLetraNaPalavraSorteada
+                );
+                checarVitoria();
+            } else {
+                console.log("A palavra não possui essa letra");
+                exibirLetraErradaNaTela(letra);
+                checarDerrota(tentativa);
+                teste(tentativa);
+                tentativa++;
+            }
+        } else {
+            return console.log("Letra já Precionada anteriomente");
+        }
     }
 }
 
 function teclasMobile() {
     let letra = mobile.firstElementChild.value;
 
-    validar2(letra.charCodeAt(0));
+    cambiarra(letra.charCodeAt(0));
 
     mobile.firstElementChild.value = "";
 }
