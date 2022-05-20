@@ -15,8 +15,8 @@ const nulo = document.querySelector(".nulo");
 const mobile = document.querySelector(".mobile"); //
 
 //events
-mobile.firstElementChild.addEventListener("click", mobileTeclado); //
-mobile.firstElementChild.addEventListener("keypress", validacaoLetras);
+window.addEventListener("click", mobileTeclado); //
+mobile.firstElementChild.addEventListener("keypress", teclasMobile);
 window.addEventListener("load", function () {
     alt.forEach((e) => {
         e.addEventListener("click", alternarInterfaces);
@@ -240,14 +240,29 @@ function validar(event) {
         return false;
     }
 }
+function validar2(keyCode) {
+    console.log(keyCode);
+    if (keyCode >= 97 && keyCode <= 122) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function teclasMobile() {
+    let letra = mobile.firstElementChild.value;
+
+    validar2(letra.charCodeAt(0));
+
+    mobile.firstElementChild.value = "";
+}
+
 function mobileTeclado() {
     if (teclado == 0) {
-        this.focus();
+        mobile.firstElementChild.focus();
         teclado = 1;
-        document.querySelector(main).style.height = "auto";
     } else {
-        this.blur();
+        mobile.firstElementChild.blur();
         teclado = 0;
-        document.querySelector(main).style.height = "86.5vh";
     }
 }
