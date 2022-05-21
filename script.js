@@ -275,7 +275,8 @@ function gambiarra(keyCode) {
 }
 
 function teclasMobile() {
-    let letra = mobile.firstElementChild.value;
+    let letra = mobile.firstElementChild.value.toLowerCase();
+    console.log(letra);
 
     gambiarra(letra.charCodeAt(0));
 
