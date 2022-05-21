@@ -15,7 +15,7 @@ const nulo = document.querySelector(".nulo");
 const mobile = document.querySelector(".mobile"); //
 
 //events
-window.addEventListener("click", mobileTeclado); //
+window.addEventListener("input", mobileTeclado); //
 mobile.firstElementChild.addEventListener("keypress", teclasMobile);
 
 window.addEventListener("load", function () {
@@ -242,7 +242,7 @@ function validar(event) {
     }
 }
 
-function cambiarra(keyCode) {
+function gambiarra(keyCode) {
     console.log(keyCode);
     if (keyCode >= 97 && keyCode <= 122) {
         let letra = String.fromCharCode(keyCode);
@@ -277,7 +277,7 @@ function cambiarra(keyCode) {
 function teclasMobile() {
     let letra = mobile.firstElementChild.value;
 
-    cambiarra(letra.charCodeAt(0));
+    gambiarra(letra.charCodeAt(0));
 
     mobile.firstElementChild.value = "";
 }
