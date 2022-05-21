@@ -113,7 +113,6 @@ function verificaSePalavraExite() {
                         at(4);
                     }, 2000);
                     limparInput();
-                    input.style.border = "1px solid red";
                     input.focus();
                     palavraNova = false;
                     break;
@@ -123,7 +122,6 @@ function verificaSePalavraExite() {
             }
 
             if (palavraNova) {
-                input.style.border = "none";
                 adicionarPalavraNoArray(word);
                 input.focus();
             }
@@ -311,6 +309,7 @@ function at(num, word) {
         avisos.firstElementChild.style.backgroundColor = "lightgreen";
         avisos.firstElementChild.querySelector(".vitoria").style.display =
             "flex";
+        document.querySelector(".desistir").textContent = "Retornar";
     } else if (num == 2) {
         avisos.style.display = "flex";
         avisos.firstElementChild.style.backgroundColor = "red";
