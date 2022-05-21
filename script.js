@@ -12,6 +12,7 @@ const input = document.querySelector(".nova-palavra");
 const novoJogo = document.querySelector("#novo-jogo");
 const valido = document.querySelector(".valido");
 const nulo = document.querySelector(".nulo");
+const avisos = document.querySelector(".avisos");
 const mobile = document.querySelector(".mobile"); //
 
 //events
@@ -52,6 +53,7 @@ function alternarInterfaces(e) {
         let index = document.querySelector(".main-index");
         index.style.display = "flex";
         limparInput();
+        at(4);
     }
 }
 function resetarJogo() {
@@ -75,6 +77,7 @@ function resetarJogo() {
     limparCanvas();
     window.focus();
     window.addEventListener("keypress", validacaoLetras);
+    at(4);
 }
 function sorteiaNumeroAleatorio() {
     let numerAleatorio = Math.floor(Math.random() * bancoDePalavras.length);
@@ -105,6 +108,10 @@ function verificaSePalavraExite() {
             for (let i = 0; i < bancoDePalavras.length; i++) {
                 if (word == bancoDePalavras[i]) {
                     console.log("palavra já existente");
+                    at(5, word);
+                    setTimeout(() => {
+                        at(4);
+                    }, 2000);
                     limparInput();
                     input.style.border = "1px solid red";
                     input.focus();
@@ -127,6 +134,10 @@ function verificaSePalavraExite() {
 }
 function adicionarPalavraNoArray(word) {
     bancoDePalavras.push(word);
+    at(3, word);
+    setTimeout(() => {
+        at(4);
+    }, 2000);
     console.log(`Palavra ${word} adicionada.`);
     limparInput();
 }
@@ -225,12 +236,14 @@ function checarVitoria() {
     if (resultado.toLowerCase() == palavraSorteada) {
         window.removeEventListener("keypress", validacaoLetras);
         console.log("Parabéns, você venceu!!!");
+        at(1);
     }
 }
 function checarDerrota(n) {
     if (n >= 6) {
         window.removeEventListener("keypress", validacaoLetras);
         console.log("Você perdeu..");
+        at(2);
     }
 }
 
@@ -276,7 +289,6 @@ function gambiarra(keyCode) {
 
 function teclasMobile() {
     let letra = mobile.firstElementChild.value.toLowerCase();
-    console.log(letra);
 
     gambiarra(letra.charCodeAt(0));
 
@@ -290,5 +302,47 @@ function mobileTeclado() {
     } else {
         mobile.firstElementChild.blur();
         teclado = 0;
+    }
+}
+
+function at(num, word) {
+    if (num == 1) {
+        avisos.style.display = "flex";
+        avisos.firstElementChild.style.backgroundColor = "lightgreen";
+        avisos.firstElementChild.querySelector(".vitoria").style.display =
+            "flex";
+    } else if (num == 2) {
+        avisos.style.display = "flex";
+        avisos.firstElementChild.style.backgroundColor = "red";
+        avisos.firstElementChild.querySelector(".derrota").style.display =
+            "flex";
+        document.querySelector(".desistir").textContent = "Retornar";
+    } else if (num == 3) {
+        avisos.style.display = "flex";
+        avisos.firstElementChild.style.backgroundColor = "pink";
+        avisos.firstElementChild.querySelector(
+            ".palavraAdd"
+        ).textContent = `Palavra ${word} adicionada!`;
+        avisos.firstElementChild.querySelector(".palavraAdd").style.display =
+            "flex";
+    } else if (num == 4) {
+        avisos.style.display = "none";
+        document.querySelector(".desistir").textContent = "Desistir";
+        avisos.firstElementChild.querySelector(".palavraAdd").style.display =
+            "none";
+        avisos.firstElementChild.querySelector(".derrota").style.display =
+            "none";
+        avisos.firstElementChild.querySelector(".vitoria").style.display =
+            "none";
+    } else if (num == 5) {
+        avisos.style.display = "flex";
+        avisos.firstElementChild.style.backgroundColor = "pink";
+        avisos.firstElementChild.querySelector(
+            ".palavraAdd"
+        ).textContent = `!!${word} Já Exite!!`;
+        avisos.firstElementChild.querySelector(".palavraAdd").style.color =
+            "red";
+        avisos.firstElementChild.querySelector(".palavraAdd").style.display =
+            "flex";
     }
 }
