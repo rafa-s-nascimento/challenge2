@@ -15,8 +15,8 @@ const nulo = document.querySelector(".nulo");
 const mobile = document.querySelector(".mobile"); //
 
 //events
-window.addEventListener("input", mobileTeclado); //
-mobile.firstElementChild.addEventListener("keypress", teclasMobile);
+window.addEventListener("click", mobileTeclado); //
+mobile.firstElementChild.addEventListener("input", teclasMobile);
 
 window.addEventListener("load", function () {
     alt.forEach((e) => {
