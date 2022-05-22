@@ -43,7 +43,7 @@ input.addEventListener("keypress", function (e) {
     }
 });
 input.addEventListener("input", function (event) {
-    let letra = event.data;
+    let letra = event.data.toLowerCase();
 
     if (this.value.length > 0) {
         if (!validar2(letra.charCodeAt(0))) {
