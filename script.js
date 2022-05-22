@@ -289,7 +289,7 @@ function detectarDispositivo() {
         navigator.userAgent.match(/BlackBerry/i) ||
         navigator.userAgent.match(/Windows Phone/i)
     ) {
-        mobile.style.display = "block";
+        mobile.style.display = "flex";
     } else {
         mobile.style.display = "none";
     }
