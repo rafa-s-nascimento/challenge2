@@ -278,7 +278,7 @@ function validar2(num) {
         return false;
     }
 }
-
+/*
 function detectarDispositivo() {
     if (
         navigator.userAgent.match(/Android/i) ||
@@ -293,7 +293,7 @@ function detectarDispositivo() {
     } else {
         mobile.style.display = "none";
     }
-}
+}*/
 
 function gambiarra(keyCode) {
     console.log(keyCode);
