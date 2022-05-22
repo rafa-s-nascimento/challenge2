@@ -68,7 +68,7 @@ button:hover {
     display: block;
     margin-bottom: 20px;
     border: none;
-    width: 50%;
+    width: 100%;
     min-width: 320px;
     padding-left: 5px;
     font-size: 1.5em;
@@ -87,16 +87,28 @@ button:hover {
     height: 250px;
 }
 .main-add div {
-    width: 100%;
+    width: 50%;
     display: flex;
     justify-content: center;
     gap: 1em;
 }
+.taDad {
+    max-width: 608px;
+    min-width: 325px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.taDad div {
+    width: 100%;
+    justify-content: flex-start;
+    margin-bottom: 0.5rem;
+}
+
 .main-add button {
     height: 48px;
     max-width: 296px;
     min-width: 155px;
-    width: 30%;
+    width: 48%;
     border-radius: 18px;
     background-color: aliceblue;
     color: darkblue;

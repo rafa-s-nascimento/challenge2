@@ -4,6 +4,10 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script
+            src="https://kit.fontawesome.com/162b81ecbe.js"
+            crossorigin="anonymous"
+        ></script>
         <link rel="stylesheet" href="style.css" />
         <title>Inicio</title>
     </head>
@@ -19,14 +23,20 @@
                 <button class="add alt activeR">Adicionar nova palavra</button>
             </section>
             <section class="main-add">
-                <div>
+                <div class="taDad">
                     <textarea
                         class="nova-palavra"
                         type="text"
                         placeholder="Digite uma palavra ou frase"
                     ></textarea>
+                    <div>
+                        <span
+                            ><i class="fa-solid fa-circle-exclamation"></i>Máx.
+                            de 8 letras</span
+                        >
+                    </div>
                 </div>
-                <div>
+                <div class="btDad">
                     <button id="salvar" class="activeB adicionar-palavra">
                         Salvar
                     </button>
