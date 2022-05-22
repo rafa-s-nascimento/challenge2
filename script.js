@@ -1,4 +1,14 @@
-const bancoDePalavras = ["casa", "carro", "desafio", "honra", "espelho"];
+const bancoDePalavras = [
+    "casa",
+    "carro",
+    "desafio",
+    "honra",
+    "espelho",
+    "pijama",
+    "covil",
+    "elefante",
+    "guitarra",
+];
 
 const letrasPrecionadas = [];
 let palavraSorteada;
@@ -30,6 +40,15 @@ window.addEventListener("keypress", validacaoLetras);
 input.addEventListener("keypress", function (e) {
     if (!validar(e) || input.value.length >= 8) {
         e.preventDefault();
+    }
+});
+input.addEventListener("input", function (event) {
+    let letra = event.data;
+
+    if (this.value.length > 0) {
+        if (!validar2(letra.charCodeAt(0))) {
+            this.value = this.value.slice(0, this.value.length - 1);
+        }
     }
 });
 
@@ -247,6 +266,13 @@ function checarDerrota(n) {
 
 function validar(event) {
     if (event.keyCode >= 97 && event.keyCode <= 122) {
+        return true;
+    } else {
+        return false;
+    }
+}
+function validar2(num) {
+    if (num >= 97 && num <= 122) {
         return true;
     } else {
         return false;
