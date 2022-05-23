@@ -88,6 +88,7 @@ function resetarJogo() {
     window.focus();
     window.addEventListener("keypress", validacaoLetras);
     input.addEventListener("keypress", bloqueiaChatEspecial);
+    mobile.firstElementChild.addEventListener("input", teclasMobile);
     // input.addEventListener(input, adaptacaoMobile);
     at(4);
 }
@@ -263,6 +264,7 @@ function checarVitoria() {
     if (resultado.toLowerCase() == palavraSorteada) {
         window.removeEventListener("keypress", validacaoLetras);
         input.removeEventListener("keypress", bloqueiaChatEspecial);
+        mobile.firstElementChild.removeEventListener("input", teclasMobile);
         // input.removeEventListener("input", adaptacaoMobile);
         console.log("Parabéns, você venceu!!!");
         at(1);
@@ -272,6 +274,7 @@ function checarDerrota(n) {
     if (n >= 6) {
         window.removeEventListener("keypress", validacaoLetras);
         input.removeEventListener("keypress", bloqueiaChatEspecial);
+        mobile.firstElementChild.removeEventListener("input", teclasMobile);
         // input.removeEventListener("input", adaptacaoMobile);
         console.log("Você perdeu..");
         at(2);
