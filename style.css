@@ -278,6 +278,10 @@ footer div {
     header {
         padding: 0 1.5em;
     }
+    main {
+        margin-bottom: 40px;
+    }
+
     .main-index :last-child {
         transform: scale(0.9);
     }
