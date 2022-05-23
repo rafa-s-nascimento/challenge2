@@ -144,6 +144,7 @@ function verificaSePalavraExite() {
 
             if (palavraNova) {
                 adicionarPalavraNoArray(word);
+                input.value = "";
                 input.focus();
             }
         }
