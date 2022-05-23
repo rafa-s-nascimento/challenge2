@@ -37,21 +37,21 @@ window.addEventListener("load", function () {
 adicionaPalavra.addEventListener("click", verificaSePalavraExite);
 novoJogo.addEventListener("click", resetarJogo);
 window.addEventListener("keypress", validacaoLetras);
-input.addEventListener("keypress", function (e) {
-    if (!validar(e) || input.value.length >= 8) {
-        e.preventDefault();
-    }
-});
+// input.addEventListener("keypress", function (e) {
+//     if (!validar(e) || input.value.length >= 8) {
+//         e.preventDefault();
+//     }
+// });
 input.addEventListener("input", function (event) {
     let letra = event.data;
     let keyCode = letra.toLowerCase().charCodeAt(0);
 
-    if (!validar2(keyCode)) {
+    if (!validar2(keyCode) || this.value.length > 8) {
         this.value = this.value.slice(0, this.value.length - 1);
     }
-    if (this.value.length > 8) {
-        this.value = this.value.slice(0, this.value.length - 1);
-    }
+    // if (this.value.length > 8 && this.le) {
+    //     this.value = this.value.slice(0, this.value.length - 1);
+    // }
 });
 
 //functions de preparação do jogo.
