@@ -223,6 +223,7 @@ button:hover {
 }
 
 footer {
+    margin: 0 auto;
     height: auto;
     display: flex;
     align-items: center;
