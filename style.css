@@ -251,7 +251,7 @@ footer div {
 .mobile {
     width: 100%;
     height: 60%;
-    display: flex;
+    display: none;
     position: absolute;
     opacity: 0;
 }
@@ -280,6 +280,17 @@ footer div {
     }
     .main-index :last-child {
         transform: scale(0.9);
+    }
+    .mobile {
+        width: 100%;
+        height: 60%;
+        display: flex;
+        position: absolute;
+        opacity: 0;
+    }
+    .mobile textarea {
+        width: 0;
+        height: 0;
     }
 }
 

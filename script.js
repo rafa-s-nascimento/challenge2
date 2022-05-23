@@ -27,7 +27,7 @@ const mobile = document.querySelector(".mobile"); //
 
 //events
 window.addEventListener("click", mobileTeclado); //
-mobile.firstElementChild.addEventListener("input", teclasMobile);
+mobile.firstElementChild.addEventListener("input", teclasMobile); //
 
 window.addEventListener("load", function () {
     alt.forEach((e) => {
@@ -37,19 +37,9 @@ window.addEventListener("load", function () {
 adicionaPalavra.addEventListener("click", verificaSePalavraExite);
 novoJogo.addEventListener("click", resetarJogo);
 window.addEventListener("keypress", validacaoLetras);
-input.addEventListener("keypress", function (e) {
-    if (!validar(e) || input.value.length >= 8) {
-        e.preventDefault();
-    }
-});
-input.addEventListener("input", function (event) {
-    let letra = event.data;
-    let keyCode = letra.toLowerCase().charCodeAt(0);
+input.addEventListener("keypress", bloqueiaChatEspecial);
 
-    if (!validar2(keyCode) || this.value.length > 8) {
-        this.value = this.value.slice(0, this.value.length - 1);
-    }
-});
+// input.addEventListener("input", adaptacaoMobile)
 
 //functions de preparação do jogo.
 function alternarInterfaces(e) {
@@ -95,6 +85,8 @@ function resetarJogo() {
     limparCanvas();
     window.focus();
     window.addEventListener("keypress", validacaoLetras);
+    input.addEventListener("keypress", bloqueiaChatEspecial);
+    // input.addEventListener(input, adaptacaoMobile);
     at(4);
 }
 function sorteiaNumeroAleatorio() {
@@ -122,7 +114,7 @@ function verificaSePalavraExite() {
 
         let palavraNova;
 
-        if (word.length <= 8) {
+        if (word.length <= 8 && word.length >= 3) {
             for (let i = 0; i < bancoDePalavras.length; i++) {
                 if (word == bancoDePalavras[i]) {
                     console.log("palavra já existente");
@@ -149,6 +141,15 @@ function verificaSePalavraExite() {
         input.focus();
     }
 }
+
+function adaptacaoMobile(event) {
+    // let letra = event.data;
+    //     let keyCode = letra.toLowerCase().charCodeAt(0);
+    //     if (!validar2(keyCode) || this.value.length > 8) {
+    //         this.value = this.value.slice(0, this.value.length - 1);
+    //     }
+}
+
 function adicionarPalavraNoArray(word) {
     bancoDePalavras.push(word);
     at(3, word);
@@ -196,6 +197,13 @@ function validacaoLetras(event) {
         }
     }
 }
+
+function bloqueiaChatEspecial(e) {
+    if (!validar(e) || input.value.length >= 8) {
+        e.preventDefault();
+    }
+}
+
 function verificaSeLetraJaFoiPrecionada(letter, callback) {
     let temNoArray = false;
 
@@ -252,6 +260,8 @@ function checarVitoria() {
 
     if (resultado.toLowerCase() == palavraSorteada) {
         window.removeEventListener("keypress", validacaoLetras);
+        input.removeEventListener("keypress", bloqueiaChatEspecial);
+        // input.removeEventListener("input", adaptacaoMobile);
         console.log("Parabéns, você venceu!!!");
         at(1);
     }
@@ -259,6 +269,8 @@ function checarVitoria() {
 function checarDerrota(n) {
     if (n >= 6) {
         window.removeEventListener("keypress", validacaoLetras);
+        input.removeEventListener("keypress", bloqueiaChatEspecial);
+        // input.removeEventListener("input", adaptacaoMobile);
         console.log("Você perdeu..");
         at(2);
     }
@@ -271,12 +283,12 @@ function validar(event) {
         return false;
     }
 }
-function validar2(num) {
-    if (num >= 97 && num <= 122) {
-        return true;
-    }
-}
-/*
+// function validar2(num) {
+//     if (num >= 97 && num <= 122) {
+//         return true;
+//     }
+// }
+
 function detectarDispositivo() {
     if (
         navigator.userAgent.match(/Android/i) ||
@@ -287,11 +299,11 @@ function detectarDispositivo() {
         navigator.userAgent.match(/BlackBerry/i) ||
         navigator.userAgent.match(/Windows Phone/i)
     ) {
-        mobile.style.display = "flex";
+        document.querySelector("#mob").style.display = "flex";
     } else {
-        mobile.style.display = "none";
+        document.querySelector("#mob").style.display = "none";
     }
-}*/
+}
 
 function gambiarra(keyCode) {
     console.log(keyCode);
