@@ -18,7 +18,7 @@ header div {
 }
 main {
     margin: 0 auto;
-    min-height: 575px;
+    min-height: 86.5vh;
     height: auto;
     display: flex;
     align-items: center;
