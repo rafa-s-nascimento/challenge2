@@ -279,7 +279,7 @@ function validar2(num) {
         return true;
     }
 }
-
+/*
 function detectarDispositivo() {
     if (
         navigator.userAgent.match(/Android/i) ||
@@ -290,11 +290,11 @@ function detectarDispositivo() {
         navigator.userAgent.match(/BlackBerry/i) ||
         navigator.userAgent.match(/Windows Phone/i)
     ) {
-        mobile.style.display = "block";
+        mobile.style.display = "flex";
     } else {
         mobile.style.display = "none";
     }
-}
+}*/
 
 function gambiarra(keyCode) {
     console.log(keyCode);
