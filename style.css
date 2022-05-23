@@ -7,6 +7,7 @@
 body {
     padding: 1em 2em;
     min-width: 350px;
+    padding-bottom: 0;
 }
 header div {
     width: 50px;
@@ -219,6 +220,32 @@ button:hover {
 }
 .palavraAdd {
     display: none;
+}
+
+footer {
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: darkblue;
+    flex-direction: column;
+    padding: 10px;
+}
+
+footer div {
+    height: 30px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.fa-github {
+    font-size: 2rem;
+    color: white;
+    transition: all 1s;
+}
+.fa-github:hover {
+    transform: scale(1.2);
 }
 
 .mobile {
