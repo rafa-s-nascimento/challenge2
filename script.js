@@ -43,10 +43,13 @@ input.addEventListener("keypress", function (e) {
     }
 });
 input.addEventListener("input", function (event) {
-    let letra = event.data.toLowerCase();
+    let letra = event.data;
+    let keyCode = letra.toLowerCase().charCodeAt(0);
 
-    if (this.value.length > 0) {
-        if (!validar2(letra.charCodeAt(0))) {
+    if (!validar2(keyCode)) {
+        this.value = this.value.slice(0, this.value.length - 1);
+    } else {
+        if (this.value.length > 8) {
             this.value = this.value.slice(0, this.value.length - 1);
         }
     }
@@ -274,8 +277,6 @@ function validar(event) {
 function validar2(num) {
     if (num >= 97 && num <= 122) {
         return true;
-    } else {
-        return false;
     }
 }
 
