@@ -43,12 +43,14 @@ input.addEventListener("keypress", function (e) {
     }
 });
 input.addEventListener("input", function (event) {
-    let letra = event.data.toLowerCase();
+    let letra = event.data.toLowerCase().charCodeAt(0);
 
-    if (this.value.length > 0) {
-        if (!validar2(letra.charCodeAt(0))) {
+    if (this.value.length <= 8) {
+        if (!validar2(letra)) {
             this.value = this.value.slice(0, this.value.length - 1);
         }
+    }else{
+        this.value = this.value.slice(0, this.value.length - 1);
     }
 });
 
