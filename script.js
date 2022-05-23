@@ -57,9 +57,11 @@ function alternarInterfaces(e) {
         let telaAdd = document.querySelector(".main-add");
         telaAdd.style.display = "flex";
         input.focus();
+        input.addEventListener("keypress", bloqueiaChatEspecial);
     } else {
         let index = document.querySelector(".main-index");
         index.style.display = "flex";
+        input.addEventListener("keypress", bloqueiaChatEspecial);
         limparInput();
         at(4);
     }
