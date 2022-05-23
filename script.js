@@ -48,10 +48,9 @@ input.addEventListener("input", function (event) {
 
     if (!validar2(keyCode)) {
         this.value = this.value.slice(0, this.value.length - 1);
-    } else {
-        if (this.value.length > 8) {
-            this.value = this.value.slice(0, this.value.length - 1);
-        }
+    }
+    if (this.value.length > 8) {
+        this.value = this.value.slice(0, this.value.length - 1);
     }
 });
 
