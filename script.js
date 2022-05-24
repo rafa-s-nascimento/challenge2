@@ -138,6 +138,12 @@ function verificaSePalavraExite() {
                 input.value = "";
                 input.focus();
             }
+        } else {
+            at(6, word);
+            setTimeout(() => {
+                at(4);
+            }, 2000);
+            limparInput();
         }
     } else {
         input.focus();
@@ -186,14 +192,14 @@ function validacaoLetras(event) {
                     );
                     checarVitoria();
                 } else {
-                    console.log("A palavra não possui essa letra");
+                    // console.log("A palavra não possui essa letra");
                     exibirLetraErradaNaTela(letra);
                     checarDerrota(tentativa);
                     teste(tentativa);
                     tentativa++;
                 }
             } else {
-                return console.log("Letra já Precionada anteriomente");
+                // return console.log("Letra já Precionada anteriomente");
             }
         }
     }
@@ -264,7 +270,7 @@ function checarVitoria() {
         input.removeEventListener("keypress", bloqueiaChatEspecial);
         mobile.firstElementChild.removeEventListener("input", teclasMobile);
         // input.removeEventListener("input", adaptacaoMobile);
-        console.log("Parabéns, você venceu!!!");
+        // console.log("Parabéns, você venceu!!!");
         at(1);
     }
 }
@@ -274,7 +280,7 @@ function checarDerrota(n) {
         input.removeEventListener("keypress", bloqueiaChatEspecial);
         mobile.firstElementChild.removeEventListener("input", teclasMobile);
         // input.removeEventListener("input", adaptacaoMobile);
-        console.log("Você perdeu..");
+        // console.log("Você perdeu..");
         at(2);
     }
 }
@@ -319,7 +325,6 @@ function detectarDispositivo() {
 }
 
 function gambiarra(keyCode) {
-    console.log(keyCode);
     if (keyCode >= 97 && keyCode <= 122) {
         let letra = String.fromCharCode(keyCode);
         let temNoArray = verificaSeLetraJaFoiPrecionada(
@@ -338,14 +343,14 @@ function gambiarra(keyCode) {
                 );
                 checarVitoria();
             } else {
-                console.log("A palavra não possui essa letra");
+                // console.log("A palavra não possui essa letra");
                 exibirLetraErradaNaTela(letra);
                 checarDerrota(tentativa);
                 teste(tentativa);
                 tentativa++;
             }
         } else {
-            return console.log("Letra já Precionada anteriomente");
+            // return console.log("Letra já Precionada anteriomente");
         }
     }
 }
@@ -383,7 +388,9 @@ function at(num, word) {
         document.querySelector(".desistir").textContent = "Retornar";
     } else if (num == 3) {
         avisos.style.display = "flex";
-        avisos.firstElementChild.style.backgroundColor = "pink";
+        avisos.firstElementChild.style.backgroundColor = "magenta";
+        avisos.firstElementChild.querySelector(".palavraAdd").style.color =
+            "white";
         avisos.firstElementChild.querySelector(
             ".palavraAdd"
         ).textContent = `Palavra ${word} adicionada!`;
@@ -400,12 +407,22 @@ function at(num, word) {
             "none";
     } else if (num == 5) {
         avisos.style.display = "flex";
-        avisos.firstElementChild.style.backgroundColor = "pink";
+        avisos.firstElementChild.style.backgroundColor = "red";
         avisos.firstElementChild.querySelector(
             ".palavraAdd"
         ).textContent = `!!${word} Já Exite!!`;
         avisos.firstElementChild.querySelector(".palavraAdd").style.color =
-            "red";
+            "white";
+        avisos.firstElementChild.querySelector(".palavraAdd").style.display =
+            "flex";
+    } else if (num == 6) {
+        avisos.style.display = "flex";
+        avisos.firstElementChild.style.backgroundColor = "red";
+        avisos.firstElementChild.querySelector(
+            ".palavraAdd"
+        ).textContent = `!!${word} Não é Permitido!!`;
+        avisos.firstElementChild.querySelector(".palavraAdd").style.color =
+            "white";
         avisos.firstElementChild.querySelector(".palavraAdd").style.display =
             "flex";
     }
