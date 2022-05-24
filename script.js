@@ -116,10 +116,9 @@ function verificaSePalavraExite() {
 
         let palavraNova;
 
-        if (word.length <= 8 && word.length >= 3) {
+        if (word.length <= 8 && word.length >= 3 && regExp(word)) {
             for (let i = 0; i < bancoDePalavras.length; i++) {
                 if (word == bancoDePalavras[i]) {
-                    console.log("palavra já existente");
                     at(5, word);
                     setTimeout(() => {
                         at(4);
@@ -144,13 +143,13 @@ function verificaSePalavraExite() {
     }
 }
 
-function adaptacaoMobile(event) {
-    // let letra = event.data;
-    //     let keyCode = letra.toLowerCase().charCodeAt(0);
-    //     if (!validar2(keyCode) || this.value.length > 8) {
-    //         this.value = this.value.slice(0, this.value.length - 1);
-    //     }
-}
+// function adaptacaoMobile(event) {
+//     let letra = event.data;
+//         let keyCode = letra.toLowerCase().charCodeAt(0);
+//         if (!validar2(keyCode) || this.value.length > 8) {
+//             this.value = this.value.slice(0, this.value.length - 1);
+//         }
+// }
 
 function adicionarPalavraNoArray(word) {
     bancoDePalavras.push(word);
@@ -158,7 +157,6 @@ function adicionarPalavraNoArray(word) {
     setTimeout(() => {
         at(4);
     }, 2000);
-    console.log(`Palavra ${word} adicionada.`);
     limparInput();
 }
 function limparInput() {
@@ -280,6 +278,16 @@ function checarDerrota(n) {
 
 function validar(event) {
     if (event.keyCode >= 97 && event.keyCode <= 122) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function regExp(word) {
+    let pattern = /[^A-z]/g;
+
+    if (!word.match(pattern)) {
         return true;
     } else {
         return false;
