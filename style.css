@@ -18,7 +18,7 @@ header div {
 }
 main {
     margin: 0 auto;
-    min-height: 575px;
+    min-height: 86.5vh;
     height: auto;
     display: flex;
     align-items: center;
@@ -223,6 +223,7 @@ button:hover {
 }
 
 footer {
+    margin: 0 auto;
     height: auto;
     display: flex;
     align-items: center;
@@ -271,13 +272,17 @@ footer div {
     .letras,
     .valido {
         width: 100%;
-        max-width: 350px;
+        */max-width: 350px;/*
         min-width: 350px;
     }
 
     header {
         padding: 0 1.5em;
     }
+    main {
+        margin-bottom: 40px;
+    }
+
     .main-index :last-child {
         transform: scale(0.9);
     }
