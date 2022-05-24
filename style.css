@@ -270,9 +270,10 @@ footer div {
     main,
     section,
     .letras,
-    .valido {
+    .valido,
+    .btDad {
         width: 100%;
-        */max-width: 350px;/*
+        /*max-width: 350px;*/
         min-width: 350px;
     }
 
@@ -308,7 +309,6 @@ footer div {
     .valido {
         width: 100%;
         max-width: 350px;
-        min-width: 350px;
     }
     header {
         padding: 0 1em;
