@@ -263,6 +263,7 @@ footer div {
 
 @media screen and (max-width: 430px) {
     body {
+        width: 100vw
         padding: 1em 0;
     }
 
